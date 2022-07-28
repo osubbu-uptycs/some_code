@@ -24,4 +24,7 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
     $cwd/add-ssh-key.sh $1
 fi
 
+ssh-add -l
+echo "Success"
+
 unset env

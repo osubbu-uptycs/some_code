@@ -13,6 +13,7 @@ pipeline {
            set
            env
            echo "PHASSPHRASE=$PHASSPHRASE"
+           start_ssh_agent.sh ${PHASSPHRASE}
         '''
       }
     }
