@@ -6,6 +6,7 @@ pipeline {
         echo 'hello from the trigger'
         echo "$params.skiptags"
         echo "$params.tag"
+        set
       }
     }
 
