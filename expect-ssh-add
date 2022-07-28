@@ -1,0 +1,5 @@
+spawn ssh-add ~/.ssh/id_rsa
+expect "Enter passphrase"
+send "[lindex $argv 0]\n"
+expect eof
+exit
