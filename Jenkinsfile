@@ -6,7 +6,7 @@ pipeline{
       branch: '',
       branchFilter: "",
       defaultValue: "",
-      description: '',
+      description: 'Version number to deploy',
       listSize: '10',
       name: 'version',
       quickFilterEnabled: false,
