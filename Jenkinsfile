@@ -7,8 +7,8 @@ pipeline {
       }
       steps {
         echo 'hello from the trigger'
-        echo "$params.skiptags"
-        echo "$params.tag"
+        echo "skip tags is $params.skiptags"
+        echo "tag is $params.tag"
         sh '''
            set
            env
