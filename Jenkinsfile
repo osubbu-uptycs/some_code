@@ -12,7 +12,7 @@ pipeline {
         sh '''
            set
            env
-           echo "$params.vaultpass"
+           echo "vault password is $vaultpass"
            echo "PHASSPHRASE=$PHASSPHRASE"
            ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
            echo "Build script completed"
