@@ -11,7 +11,7 @@ pipeline{
       name: 'version',
       quickFilterEnabled: false,
       selectedValue: 'NONE',
-      sortMode: 'ASCENDING_SMART',
+      sortMode: 'DECENDING_SMART',
       tagFilter: "*",
       type: 'PT_TAG',
       useRepository: 'https://github.com/osubbu-uptycs/some_code.git')
