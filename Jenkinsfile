@@ -20,11 +20,11 @@ pipeline {
                             this is a multi-line 
                             string parameter example
                             ''', 
-                              name: 'MULTI-LINE-STRING'
+                              name: 'MULTI_LINE_STRING'
                         ),
                         string(
                             defaultValue: 'scriptcrunch', 
-                            name: 'STRING-PARAMETER', 
+                            name: 'STRING_PARAMETER', 
                             trim: true
                         )
                     ])
@@ -38,11 +38,15 @@ pipeline {
       }
       steps {
         echo 'hello from the trigger'
-        echo "$params.skiptags"
-        echo "$params.tag"
+        echo "skiptags is $params.skiptags"
+        echo "tags is $params.tag"
         sh '''
            set
            env
+           echo "PARAMETER_01 is $PARAMETER_01"
+           echo "BOOLEAN is $BOOLEAN"
+           echo "MULTI_LINE_STRING is $MULTI_LINE_STRING"
+           echo "STRING_PARAMETER is $STRING_PARAMETER"
            echo "vault password is $vaultpass"
            echo "PHASSPHRASE=$PHASSPHRASE"
            ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
