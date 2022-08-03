@@ -41,6 +41,12 @@ pipeline{
       description: 'extra vars'
     )
 
+    choice(
+      choices: ['subbutsu', 'staging'], 
+      name: 'domain'
+      description: 'Stack to deploy"
+    )
+
    }
 
    stages{
