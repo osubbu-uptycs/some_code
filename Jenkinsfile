@@ -54,8 +54,7 @@ pipeline{
            ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
            echo "Build script completed"
         '''
+       }
       }
-        }
-     }
-  } 
-}
+  }
+} 
