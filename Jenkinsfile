@@ -10,7 +10,7 @@ pipeline{
       branch: '',
       branchFilter: "",
       defaultValue: "",
-      description: 'Edna version number',
+      description: 'Build tag',
       listSize: '10',
       name: 'version',
       quickFilterEnabled: false,
@@ -51,7 +51,7 @@ pipeline{
       defaultValue: '', 
       name: 'sprint', 
       trim: true,
-      description: 'sprint number'
+      description: 'optional: sprint number [ default will be first three digits of build tag# ]'
     )
 
    }
