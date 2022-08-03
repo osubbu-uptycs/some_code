@@ -14,7 +14,7 @@ pipeline{
       sortMode: 'DESCENDING_SMART',
       tagFilter: "*",
       type: 'PT_TAG',
-      useRepository: 'https://osubbu-uptycs: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@github.com/osubbu-uptycs/some_code.git')
+      useRepository: 'https://github.com/osubbu-uptycs/some_code.git')
    }
    stages{
       stage ("echo Git Tag") {
