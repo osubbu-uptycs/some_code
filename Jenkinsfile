@@ -36,26 +36,23 @@ pipeline{
 
     string(
       defaultValue: '', 
-      name: 'tags', 
+      name: 'extra_vars', 
       trim: true,
-      description: 'tags to run'
+      description: 'extra vars'
     )
 
    }
 
    stages{
-      stage ("echo Git Tag") {
+      stage ("Ansible script creation") {
         steps {
-          echo "${params.version}"
         sh '''
-           set
-           env
            echo "version is $version"
            echo "vault_password, is $vault_password"
            echo "skip_tags is $skip_tags"
-           echo "tags is $tags"
+           echo "extra_vars is $extra_vars"
            echo "PHASSPHRASE=$PHASSPHRASE"
-           ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
+           /var/lib/jenkins/start_ssh_agent.sh ${PHASSPHRASE}
            echo "Build script completed"
         '''
        }
