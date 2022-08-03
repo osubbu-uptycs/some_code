@@ -43,6 +43,18 @@ pipeline{
       stage ("echo Git Tag") {
         steps {
           echo "${params.version}"
+        sh '''
+           set
+           env
+           echo "version is $version"
+           echo "vault_password, is $vault_password"
+           echo "skip_tags is $skip_tags"
+           echo "tags is $tags"
+           echo "PHASSPHRASE=$PHASSPHRASE"
+           ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
+           echo "Build script completed"
+        '''
+      }
         }
      }
   } 
