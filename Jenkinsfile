@@ -1,6 +1,10 @@
 pipeline{
   agent any 
 
+  environment {
+		PHASSPHRASE = credentials('passphrase')
+  }
+  
   parameters {
     gitParameter(
       branch: '',
