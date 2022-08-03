@@ -51,7 +51,7 @@ pipeline{
       defaultValue: '', 
       name: 'sprint', 
       trim: true,
-      description: 'sprint number [ default will be first three digits of build tag# ]'
+      description: 'sprint number [ default is three leftmost digits of build tag# ]'
     )
 
    }
