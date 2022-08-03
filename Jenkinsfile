@@ -15,20 +15,20 @@ pipeline{
       tagFilter: "*",
       type: 'PT_TAG',
       useRepository: 'https://github.com/osubbu-uptycs/some_code.git'
-    ),
+    )
                             
     password(
       defaultValue: '', 
       name: 'vault_password', 
       description: 'Vault password'
-    ),
+    )
 
     string(
       defaultValue: '', 
       name: 'skip_tags', 
       trim: true,
       description: 'Skip tags'
-    ),
+    )
 
     string(
       defaultValue: '', 
