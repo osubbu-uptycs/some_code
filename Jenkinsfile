@@ -47,11 +47,6 @@ pipeline{
       stage ("Ansible script creation") {
         steps {
         sh '''
-           echo "version is $version"
-           echo "vault_password, is $vault_password"
-           echo "skip_tags is $skip_tags"
-           echo "extra_vars is $extra_vars"
-           echo "PHASSPHRASE=$PHASSPHRASE"
            /var/lib/jenkins/start_ssh_agent.sh ${PHASSPHRASE}
            echo "Build script completed"
         '''
