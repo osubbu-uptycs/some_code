@@ -10,7 +10,7 @@ pipeline{
       branch: '',
       branchFilter: "",
       defaultValue: "",
-      description: 'Version number to deploy',
+      description: 'Edna version number',
       listSize: '10',
       name: 'version',
       quickFilterEnabled: false,
@@ -45,6 +45,13 @@ pipeline{
       choices: ['none', 'subbutsu', 'staging'], 
       name: 'domain',
       description: 'Stack to deploy'
+    )
+
+    string(
+      defaultValue: '', 
+      name: 'sprint', 
+      trim: true,
+      description: 'sprint number'
     )
 
    }
