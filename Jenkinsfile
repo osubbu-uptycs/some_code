@@ -43,7 +43,7 @@ pipeline{
     choice(
       choices: ['none', 'subbutsu', 'staging'], 
       name: 'domain',
-      description: 'Stack or Domain to deploy'
+      description: 'Stack or Domain env to deploy'
     )
   }
 
