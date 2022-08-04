@@ -48,6 +48,17 @@ pipeline{
   }
 
   stages{
+    stage ("Echo inputs") {
+      steps {
+        sh '''
+           echo "INFO: sprint is $sprint"
+           echo "INFO: version is $version"
+           echo "INFO: domain is $domain"
+           echo "INFO: skip_tags is $skip_tags"
+           echo "INFO: extra_vars is $extra_vars"      
+        '''
+       }
+    }
     stage('Input Confirmation') {
       options {
         timeout(time: 60, unit: 'SECONDS') 
