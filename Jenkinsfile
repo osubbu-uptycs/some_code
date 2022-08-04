@@ -2,7 +2,7 @@ pipeline{
   agent any 
 
   environment {
-		PHASSPHRASE = credentials('passphrase')
+		SALT_KEY = credentials('saltkey')
   }
   
   parameters {
@@ -97,7 +97,7 @@ pipeline{
       steps {
         sh '''
           set +x
-          /var/lib/jenkins/start_ssh_agent.sh ${PHASSPHRASE}
+          /var/lib/jenkins/start_ssh_agent.sh ${SALT_KEY}
           echo "INFO: Build script completed"
         '''
       }
