@@ -61,7 +61,7 @@ pipeline{
     }
     stage('Input Confirmation') {
       options {
-        timeout(time: 60, unit: 'SECONDS') 
+        timeout(time: 20, unit: 'SECONDS') 
       }
       input {
         message "Review the Inputs and confirm to Deploy"
@@ -81,7 +81,7 @@ pipeline{
     }
     stage('Deploy Confirmation') {
       options {
-        timeout(time: 60, unit: 'SECONDS') 
+        timeout(time: 30, unit: 'SECONDS') 
       }
       input {
         message "Should we continue?"
