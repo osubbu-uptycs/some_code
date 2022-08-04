@@ -52,8 +52,9 @@ pipeline{
       options {
         timeout(time: 60, unit: 'SECONDS') 
       }
-      message "Review the Inputs and confirm to Deploy"
-      ok "Confirm"
+      input {
+        message "Review the Inputs and confirm to Deploy"
+        ok "Confirm"
       }
       steps {
         echo "INFO: Continuing with ansible script creation"
