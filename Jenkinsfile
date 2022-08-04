@@ -52,16 +52,8 @@ pipeline{
       options {
         timeout(time: 60, unit: 'SECONDS') 
       }
-      input {
-        parameters {
-          choice(name: 'Sprint', choices: "$params.sprint\n")
-          choice(name: 'Version', choices: "$params.version\n")
-          choice(name: 'Domain', choices: "$params.domain\n")
-          choice(name: 'Skip Tags', choices: "$params.skip_tags\n")
-          choice(name: 'Extra Vars', choices: "$params.extra_vars\n")
-        }
-        message "Review the Inputs and confirm to Deploy"
-        ok "Confirm"
+      message "Review the Inputs and confirm to Deploy"
+      ok "Confirm"
       }
       steps {
         echo "INFO: Continuing with ansible script creation"
