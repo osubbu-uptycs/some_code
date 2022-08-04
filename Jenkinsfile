@@ -75,7 +75,6 @@ pipeline{
     stage ("Ansible script creation") {
       steps {
         sh '''
-          set +x
           /var/lib/jenkins/create_ansi_script.sh
           echo "INFO: Build script created"
         '''
@@ -96,7 +95,6 @@ pipeline{
     stage ("Ansible script execution") {
       steps {
         sh '''
-          set +x
           /var/lib/jenkins/start_ssh_agent.sh ${SALT_KEY}
           echo "INFO: Build script completed"
         '''
