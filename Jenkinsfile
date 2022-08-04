@@ -10,7 +10,7 @@ pipeline{
       defaultValue: '', 
       name: 'sprint', 
       trim: true,
-      description: 'Which sprint to deploy? Help: Usually it is a three digit number and can not be empty.'
+      description: 'Which sprint to deploy? Help: Usually it is a three digit number.'
     )
   
     string(
@@ -23,21 +23,21 @@ pipeline{
     password(
       defaultValue: '', 
       name: 'vault_password', 
-      description: 'Vault password'
+      description: 'Vault password to use in ansible command'
     )
 
     string(
       defaultValue: '', 
       name: 'skip_tags', 
       trim: true,
-      description: 'Skip tags to use in ansible playbook'
+      description: 'Skip tags to use in ansible playbook. Optional argument.'
     )
 
     string(
       defaultValue: '', 
       name: 'extra_vars', 
       trim: true,
-      description: 'Extra vars to use in ansible playbook'
+      description: 'Extra vars to use in ansible playbook. Optional argument.'
     )
 
     choice(
