@@ -51,6 +51,7 @@ pipeline{
     stage ("Echo inputs") {
       steps {
         sh '''
+           set +x
            echo "INFO: sprint is $sprint"
            echo "INFO: version is $version"
            echo "INFO: domain is $domain"
@@ -61,7 +62,7 @@ pipeline{
     }
     stage('Input Confirmation') {
       options {
-        timeout(time: 20, unit: 'SECONDS') 
+        timeout(time: 30, unit: 'SECONDS') 
       }
       input {
         message "Review the Inputs and confirm to Deploy"
@@ -74,6 +75,7 @@ pipeline{
     stage ("Ansible script creation") {
       steps {
         sh '''
+          set +x
           /var/lib/jenkins/create_ansi_script.sh
           echo "INFO: Build script created"
         '''
@@ -94,6 +96,7 @@ pipeline{
     stage ("Ansible script execution") {
       steps {
         sh '''
+          set +x
           /var/lib/jenkins/start_ssh_agent.sh ${PHASSPHRASE}
           echo "INFO: Build script completed"
         '''
