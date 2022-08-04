@@ -48,6 +48,18 @@ pipeline{
   }
 
   stages{
+    stage('Input Confirmation') {
+      options {
+        timeout(time: 60, unit: 'SECONDS') 
+      }
+      input {
+        parameters {
+          choice(name: 'inputs_received', choices: "$params.sprint\n$params.version\n$params.domain\n$params.skip_tags\n$params.extra_vars\n", description: 'Input Parameters?')
+        }
+        message "Review the Inputs and confirm to Deploy"
+        ok "Confirm"
+      }
+    }
     stage ("Ansible script creation") {
       steps {
         sh '''
@@ -61,12 +73,7 @@ pipeline{
         timeout(time: 60, unit: 'SECONDS') 
       }
       input {
-        message "Sprint is $params.sprint"
-        message "Version is $params.version"
-        message "Domain is $params.domain"
-        message "Skip tags is $params.skip_tags"
-        message "Extra vars is $params.extra_vars"
-        message "Review the ansible command and confirm to Deploy"
+        message "Should we continue?"
         ok "Deploy"
       }
     }
