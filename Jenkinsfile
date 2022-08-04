@@ -59,6 +59,9 @@ pipeline{
         message "Review the Inputs and confirm to Deploy"
         ok "Confirm"
       }
+      steps {
+        echo "INFO: Continuing with ansible script creation"
+      }
     }
     stage ("Ansible script creation") {
       steps {
@@ -75,6 +78,9 @@ pipeline{
       input {
         message "Should we continue?"
         ok "Deploy"
+      }
+      steps {
+        echo "INFO: Continuing with deployment"
       }
     }
     stage ("Ansible script execution") {
