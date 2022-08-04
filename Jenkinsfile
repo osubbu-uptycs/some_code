@@ -51,7 +51,6 @@ pipeline{
     stage ("Echo inputs") {
       steps {
         sh '''
-           set +x
            echo "INFO: sprint is $sprint"
            echo "INFO: version is $version"
            echo "INFO: domain is $domain"
