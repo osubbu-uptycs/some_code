@@ -95,7 +95,7 @@ pipeline{
     stage ("Ansible script execution") {
       steps {
         sh '''
-          /var/lib/jenkins/start_ssh_agent.sh ${SALT_KEY}
+          /var/lib/jenkins/start_ssh_agent.sh
           echo "INFO: Build script completed"
         '''
       }
