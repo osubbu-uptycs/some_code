@@ -56,7 +56,8 @@ pipeline{
            echo "INFO: version is $version"
            echo "INFO: domain is $domain"
            echo "INFO: skip_tags is $skip_tags"
-           echo "INFO: extra_vars is $extra_vars"      
+           echo "INFO: extra_vars is $extra_vars"
+           echo "INFO: workspace dir is ${env.WORKSPACE}"
         '''
        }
     }
