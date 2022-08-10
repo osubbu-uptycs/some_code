@@ -55,9 +55,6 @@ pipeline {
            echo "BOOLEAN is $BOOLEAN"
            echo "MULTI_LINE_STRING is $MULTI_LINE_STRING"
            echo "STRING_PARAMETER is $STRING_PARAMETER"
-           echo "vault password is $vaultpass"
-           echo "PHASSPHRASE=$PHASSPHRASE"
-           ${WORKSPACE}/start_ssh_agent.sh ${PHASSPHRASE}
            echo "Build script completed"
         '''
       }
