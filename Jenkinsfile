@@ -1,14 +1,5 @@
 pipeline {
   agent any
-  stages {
-    stage('PollSCM') {
-        steps {
-            checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [url: 'https://github.com/osubbu-uptycs/some_code.git']])
-            script {
-                tags = sh(script: "git tag --sort=v:refname | tail -5 ", returnStdout: true).trim()
-            }
-        }
-    }
     stage('Setup parameters') {
         steps {
             script { 
