@@ -33,9 +33,6 @@ pipeline {
         }
     }
     stage('echo') {
-      environment {
-		    PHASSPHRASE = credentials('passphrase')
-      }
       steps {
         echo 'hello from the trigger'
         echo "skiptags is $params.skiptags"
